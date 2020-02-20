@@ -43,7 +43,6 @@ def rock_paper_scissors(n):
                             arr[count3] = arr[count3] + opt[index2]
                             count2 += 1
                             count3 += 1
-                    # for i in range(len(arr)):
 
                     return recurse_populate(opt, arr, n - 1)
                 return recurse_populate(opt, arr, n)
