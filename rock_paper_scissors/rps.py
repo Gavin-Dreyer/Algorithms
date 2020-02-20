@@ -9,25 +9,25 @@ import sys
 
 def rock_paper_scissors(n):
     options = [['rock'], ['paper'], ['scissors']]
-    array = []
-    count = 0
+    results = []
     index = 0
+    index2 = 0
+    count = 0
     count2 = 0
     count3 = 0
-    index2 = 0
-    nth = n
+
     if n == 0:
         return [[]]
     elif n == 1:
         return options
     else:
-        def recurse_rps(opt, arr, n):
+        def recurse_create(opt, arr, n):
             if len(arr) == 3**n:
-                def recurse_rps2(opt, arr, n):
+                def recurse_populate(opt, arr, n):
                     if n < 2:
                         return arr
 
-                    nonlocal count2, index2, nth, count3
+                    nonlocal count2, index2, count3
                     index2 = 0
                     count2 = 0
                     count3 = 0
@@ -45,8 +45,8 @@ def rock_paper_scissors(n):
                             count3 += 1
                     # for i in range(len(arr)):
 
-                    return recurse_rps2(opt, arr, n - 1)
-                return recurse_rps2(opt, arr, n)
+                    return recurse_populate(opt, arr, n - 1)
+                return recurse_populate(opt, arr, n)
             else:
                 nonlocal count, index
                 for i in range(3):
@@ -58,8 +58,8 @@ def rock_paper_scissors(n):
                     else:
                         arr = arr + [opt[index]]
                         count += 1
-            return recurse_rps(opt, arr, n)
-        return recurse_rps(options, array, n)
+            return recurse_create(opt, arr, n)
+        return recurse_create(options, results, n)
 
 
 # print(rock_paper_scissors(0))
