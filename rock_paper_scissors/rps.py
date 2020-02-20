@@ -61,43 +61,9 @@ def rock_paper_scissors(n):
         return recurse_create(options, results, n)
 
 
-# print(rock_paper_scissors(0))
-# print(rock_paper_scissors(1))
-# print(rock_paper_scissors(2))
-print(rock_paper_scissors(4))
-
-# if __name__ == "__main__":
-#     if len(sys.argv) > 1:
-#         num_plays = int(sys.argv[1])
-#         print(rock_paper_scissors(num_plays))
-#     else:
-#         print('Usage: rps.py [num_plays]')
-
-# count = 0
-
-#     def recurse_rps(arr, n):
-#         nonlocal count
-#         if len(arr) == 3**n:
-#             return arr
-#         elif len(arr) < (3**n)/3:
-#             for i in range(int((3**n)/3)):
-#                 arr = arr + [rock]
-#                 count = i + 1
-#         elif count >= ((3**n)/3) and count < (3**n) - ((3**n)/3):
-#             arr = arr + [paper]
-#             count += 1
-#         else:
-#             arr = arr + [scissors]
-#             count += 1
-#         return recurse_rps(arr, n)
-
-# count = 0
-#     print(array)
-#     for i in range(len(array)):
-#         if count == 3:
-#             count = 0
-
-#         array[i] = array[i] + options[count]
-#         count += 1
-
-#     print(array)
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        num_plays = int(sys.argv[1])
+        print(rock_paper_scissors(num_plays))
+    else:
+        print('Usage: rps.py [num_plays]')
